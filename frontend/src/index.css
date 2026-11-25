@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-secondary;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-700 active:bg-primary-800 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-secondary font-semibold rounded-xl border border-brand-border hover:bg-brand-surface active:bg-gray-100 transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-brand-error text-white font-medium rounded-lg hover:bg-red-700 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-brand-border shadow-card p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-secondary placeholder-brand-muted focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary transition-all duration-200;
+  }
+
+  .tool-card {
+    @apply bg-white rounded-2xl border border-brand-border shadow-card p-6 flex flex-col gap-4 hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 cursor-pointer;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-secondary;
+  }
+
+  .section-subheading {
+    @apply text-lg text-brand-muted;
+  }
+
+  .upload-zone {
+    @apply border-2 border-dashed border-brand-border rounded-2xl p-12 flex flex-col items-center justify-center gap-4 hover:border-primary hover:bg-primary-50 transition-all duration-200 cursor-pointer;
+  }
+
+  .upload-zone.drag-over {
+    @apply border-primary bg-primary-50;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
